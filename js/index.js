@@ -5,7 +5,15 @@ fetch("./data/countries_ko.json")
 
     countries.forEach((country) => {
       const listItem = document.createElement("li");
-      listItem.textContent = country.name;
+      listItem.style.marker;
+
+      const checkBox = document.createElement("input");
+      checkBox.type = "checkbox";
+      const label = document.createElement("label");
+      label.innerText = country.name;
+
+      listItem.appendChild(checkBox);
+      listItem.appendChild(label);
 
       countryList.appendChild(listItem);
     });
