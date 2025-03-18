@@ -5,15 +5,11 @@ fetch("./data/countries_ko.json")
 
     countries.forEach((country) => {
       const listItem = document.createElement("li");
-      listItem.style.marker;
 
-      const checkBox = document.createElement("input");
-      checkBox.type = "checkbox";
-      const label = document.createElement("label");
-      label.innerText = country.name;
-
-      listItem.appendChild(checkBox);
-      listItem.appendChild(label);
+      listItem.innerHTML = `
+        <input type="checkbox" />
+        <label>${country.name}</label>
+      `;
 
       countryList.appendChild(listItem);
     });
