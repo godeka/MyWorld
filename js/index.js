@@ -10,6 +10,7 @@ const map = new mapboxgl.Map({
   projection: "equirectangular", // 직사각형 투영
 });
 map.setRenderWorldCopies(false); // 루프 방지
+map.dragPan.disable(); // 드래그 방지
 
 fetch("./data/countries_ko.json")
   .then((res) => res.json())
