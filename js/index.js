@@ -1,3 +1,16 @@
+// mapbox 지도(2d) 띄우기
+mapboxgl.accessToken =
+  "pk.eyJ1IjoiZ29kZWthIiwiYSI6ImNtOG54azZpbzA1ZmMybG9qejJ1aTVyNDcifQ.5J3bnCVQntAWizBEqIqLYQ";
+
+const map = new mapboxgl.Map({
+  container: "map",
+  center: [0, 0], // 경도, 위도
+  zoom: 1,
+  style: "mapbox://styles/mapbox/light-v11",
+  projection: "equirectangular", // 직사각형 투영
+});
+map.setRenderWorldCopies(false); // 루프 방지
+
 fetch("./data/countries_ko.json")
   .then((res) => res.json())
   .then((countries) => {
