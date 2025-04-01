@@ -1,3 +1,5 @@
+import mapboxgl from "mapbox-gl";
+
 // mapbox 지도(2d) 띄우기
 mapboxgl.accessToken =
   "pk.eyJ1IjoiZ29kZWthIiwiYSI6ImNtOG54azZpbzA1ZmMybG9qejJ1aTVyNDcifQ.5J3bnCVQntAWizBEqIqLYQ";
