@@ -1,4 +1,5 @@
 import mapboxgl from "mapbox-gl";
+import countries_ko from "./data/countries_ko.json";
 
 // mapbox 지도(2d) 띄우기
 mapboxgl.accessToken =
@@ -18,19 +19,15 @@ map.scrollZoom.disable();
 map.boxZoom.disable();
 map.doubleClickZoom.disable();
 
-fetch("./data/countries_ko.json")
-  .then((res) => res.json())
-  .then((countries) => {
-    const countryList = document.getElementById("country-list");
+const countryList = document.getElementById("country-list");
 
-    countries.forEach((country) => {
-      const listItem = document.createElement("li");
+countries_ko.forEach((country) => {
+  const listItem = document.createElement("li");
 
-      listItem.innerHTML = `
+  listItem.innerHTML = `
         <input type="checkbox" />
         <label>${country.name}</label>
       `;
 
-      countryList.appendChild(listItem);
-    });
-  });
+  countryList.appendChild(listItem);
+});
