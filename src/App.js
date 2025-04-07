@@ -1,4 +1,5 @@
 import Map from "./components/Map";
+import SearchField from "./components/SearchField";
 
 export default function App($app) {
   this.state = {
@@ -10,6 +11,10 @@ export default function App($app) {
   };
 
   const map = new Map({ $app, initialState: [] });
+  const searchField = new SearchField({
+    $app,
+    initialState: [],
+  });
 
   this.init = () => {};
 }
