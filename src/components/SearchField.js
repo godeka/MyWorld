@@ -1,6 +1,9 @@
-import countries_ko from "../data/countries_ko.json";
-
-export default function SearchField({ $app, initialState, onCheck }) {
+export default function SearchField({
+  $app,
+  countries_ko,
+  initialState,
+  onCheck,
+}) {
   this.state = initialState;
   this.$target = document.createElement("div");
   this.$target.className = "search-container";
@@ -16,7 +19,7 @@ export default function SearchField({ $app, initialState, onCheck }) {
     let temp = [];
     countries_ko.forEach((country) => {
       temp += `<li class="country-item">
-            <input type="checkbox" name="country" id="${country.id}" />
+            <input type="checkbox" name="country" id="${country.alpha2}" />
             <label>${country.name}</label>
           </li>`;
     });
@@ -63,9 +66,9 @@ export default function SearchField({ $app, initialState, onCheck }) {
     // 나라 목록만 리렌더링
     let temp = [];
     countries_ko.forEach((country) => {
-      const checked = this.state.includes(country.id);
+      const checked = this.state.includes(country.alpha2);
       temp += `<li class="country-item">
-            <input type="checkbox" name="country" id="${country.id}" ${
+            <input type="checkbox" name="country" id="${country.alpha2}" ${
         checked ? "checked" : ""
       } />
             <label>${country.name}</label>

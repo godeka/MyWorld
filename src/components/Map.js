@@ -1,7 +1,24 @@
 import mapboxgl from "mapbox-gl";
 
-export default function Map({ $app, initialState }) {
+mapboxgl.accessToken =
+  "pk.eyJ1IjoiZ29kZWthIiwiYSI6ImNtOG54azZpbzA1ZmMybG9qejJ1aTVyNDcifQ.5J3bnCVQntAWizBEqIqLYQ";
+
+export default function Map({ $app, initialState, onClick }) {
   this.state = initialState;
+
+  const $target = document.createElement("div");
+  $target.id = "map";
+  $app.appendChild($target);
+
+  const map = new mapboxgl.Map({
+    container: "map",
+    center: [0, 0], // 경도, 위도
+    zoom: 1.5,
+    style: "mapbox://styles/mapbox/light-v11",
+    projection: "equirectangular", // 직사각형 투영
+  });
+
+  let countriesGeoJSON;
 
   this.setState = (newState) => {
     this.state = newState;
@@ -9,24 +26,23 @@ export default function Map({ $app, initialState }) {
   };
 
   this.render = () => {
-    const $target = document.createElement("div");
-    $target.id = "map";
-    $app.appendChild($target);
+    if (!countriesGeoJSON) return;
+
+    // selected 여부 설정
+    const features = countriesGeoJSON.features;
+
+    features.forEach((country) => {
+      const a2 = country.properties.ISO_A2.toLowerCase();
+      const selected = this.state.includes(a2);
+
+      map.setFeatureState(
+        { source: "countries", id: country.id },
+        { selected: selected }
+      );
+    });
   };
 
   this.init = () => {
-    this.render();
-
-    mapboxgl.accessToken =
-      "pk.eyJ1IjoiZ29kZWthIiwiYSI6ImNtOG54azZpbzA1ZmMybG9qejJ1aTVyNDcifQ.5J3bnCVQntAWizBEqIqLYQ";
-
-    const map = new mapboxgl.Map({
-      container: "map",
-      center: [0, 0], // 경도, 위도
-      zoom: 1.5,
-      style: "mapbox://styles/mapbox/light-v11",
-      projection: "equirectangular", // 직사각형 투영
-    });
     map.getCanvas().style.cursor = "default"; // 기본 커서로
 
     map.setRenderWorldCopies(false); // 루프 방지
@@ -40,7 +56,6 @@ export default function Map({ $app, initialState }) {
 
     // 색칠 준비
     map.on("load", async () => {
-      let countriesGeoJSON;
       await fetch("./src/data/countries.geojson")
         .then((res) => res.json())
         .then((data) => {
@@ -96,6 +111,7 @@ export default function Map({ $app, initialState }) {
       // 클릭하여 선택/해제
       map.on("click", "country-fills", (e) => {
         const country = e.features[0];
+        const a2 = country.properties.ISO_A2.toLowerCase();
 
         const { selected } = map.getFeatureState({
           source: "countries",
@@ -106,6 +122,9 @@ export default function Map({ $app, initialState }) {
           { source: "countries", id: country.id },
           { selected: !selected }
         );
+
+        // setState
+        onClick(!selected, a2);
       });
     });
   };

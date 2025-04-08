@@ -1,30 +1,44 @@
+import countries_ko from "./data/countries_ko.json";
+
 import Map from "./components/Map";
 import SearchField from "./components/SearchField";
 
 export default function App($app) {
   this.state = {
-    selectedCountry: [],
+    selectedCountries: [], // alpha2
   };
 
   this.setState = (newState) => {
     this.state = newState;
-    searchField.setState(newState.selectedCountry);
-    // console.log(newState.selectedCountry);
+    map.setState(newState.selectedCountries);
+    searchField.setState(newState.selectedCountries);
   };
 
-  const map = new Map({ $app, initialState: [] });
-  const searchField = new SearchField({
+  const map = new Map({
     $app,
     initialState: [],
+    onClick: (select, countryA2) => {
+      let newSelected = [...this.state.selectedCountries];
+
+      if (select) newSelected.push(countryA2);
+      else newSelected = newSelected.filter((c) => c !== countryA2);
+      this.setState({ selectedCountries: newSelected });
+    },
+  });
+  const searchField = new SearchField({
+    $app,
+    countries_ko,
+    initialState: [],
     onCheck: (checkbox) => {
-      const idNumber = Number(checkbox.id);
-      let newSelected = [...this.state.selectedCountry];
+      const countryA2 = checkbox.id;
+      let newSelected = [...this.state.selectedCountries];
+
       if (checkbox.checked) {
-        newSelected.push(idNumber);
+        newSelected.push(countryA2);
       } else {
-        newSelected = newSelected.filter((c) => c !== idNumber);
+        newSelected = newSelected.filter((c) => c !== countryA2);
       }
-      this.setState({ selectedCountry: newSelected });
+      this.setState({ selectedCountries: newSelected });
     },
   });
 
