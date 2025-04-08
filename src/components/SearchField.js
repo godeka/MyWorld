@@ -1,6 +1,6 @@
 import countries_ko from "../data/countries_ko.json";
 
-export default function SearchField({ $app, initialState }) {
+export default function SearchField({ $app, initialState, onCheck }) {
   this.state = initialState;
   this.$target = document.createElement("div");
   this.$target.className = "search-container";
@@ -12,25 +12,21 @@ export default function SearchField({ $app, initialState }) {
     this.render();
   };
 
-  this.template = () => {
+  this.init = () => {
     let temp = [];
     countries_ko.forEach((country) => {
       temp += `<li class="country-item">
-            <input type="checkbox" name="country" />
+            <input type="checkbox" name="country" id="${country.id}" />
             <label>${country.name}</label>
           </li>`;
     });
 
-    return `
+    this.$target.innerHTML = `
         <input type="text" class="search-country" placeholder="나라명을 검색하세요" />
         <div class="select-container hidden">
             <ul class="select-list">${temp}</ul>
         </div>
     `;
-  };
-
-  this.render = () => {
-    this.$target.innerHTML = this.template();
 
     // 검색 필터링
     const $searchInput = document.querySelector("input.search-country");
@@ -53,7 +49,38 @@ export default function SearchField({ $app, initialState }) {
     this.$target.addEventListener("mouseleave", () => {
       document.querySelector("div.select-container").classList.add("hidden");
     });
+
+    // 나라 선택
+    const $checkboxes = document.querySelectorAll("input[name='country']");
+    $checkboxes.forEach(($checkbox) => {
+      $checkbox.addEventListener("change", () => {
+        onCheck($checkbox);
+      });
+    });
   };
 
-  this.render();
+  this.render = () => {
+    // 나라 목록만 리렌더링
+    let temp = [];
+    countries_ko.forEach((country) => {
+      const checked = this.state.includes(country.id);
+      temp += `<li class="country-item">
+            <input type="checkbox" name="country" id="${country.id}" ${
+        checked ? "checked" : ""
+      } />
+            <label>${country.name}</label>
+          </li>`;
+    });
+    document.querySelector("ul.select-list").innerHTML = temp;
+
+    // 나라 선택
+    const $checkboxes = document.querySelectorAll("input[name='country']");
+    $checkboxes.forEach(($checkbox) => {
+      $checkbox.addEventListener("change", () => {
+        onCheck($checkbox);
+      });
+    });
+  };
+
+  this.init();
 }
