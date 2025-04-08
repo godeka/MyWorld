@@ -75,6 +75,21 @@ export default function Map({ $app, initialState, onClick }) {
       });
 
       map.addLayer({
+        id: "country-hovers",
+        type: "fill",
+        source: "countries",
+        paint: {
+          "fill-color": [
+            "case",
+            ["boolean", ["feature-state", "hover"], false],
+            "rgb(84, 84, 84)", // hover=true인 나라의 색
+            "rgba(0,0,0,0)", // hover=false인 나라의 색 (투명)
+          ],
+          "fill-opacity": 0.5,
+        },
+      });
+
+      map.addLayer({
         id: "country-fills",
         type: "fill",
         source: "countries",
@@ -108,7 +123,40 @@ export default function Map({ $app, initialState, onClick }) {
         }
       });
 
-      // 클릭하여 선택/해제
+      // 나라에 마우스오버 시 색칠
+      let hoveredId = null;
+
+      map.on("mousemove", "country-hovers", (e) => {
+        const currentId = e.features[0].id;
+
+        // 다른 나라로 마우스 이동
+        if (hoveredId !== null && hoveredId !== currentId) {
+          // 이전에 hover되었던 나라 초기화
+          map.setFeatureState(
+            { source: "countries", id: hoveredId },
+            { hover: false }
+          );
+        }
+
+        // 레이어 바깥에서 안으로 마우스 이동
+        if (hoveredId !== currentId) {
+          // 새로 hover된 나라에 hover 설정
+          hoveredId = currentId;
+          map.setFeatureState(
+            { source: "countries", id: hoveredId },
+            { hover: true }
+          );
+        }
+      });
+
+      map.on("mouseout", "country-hovers", () => {
+        map.setFeatureState(
+          { source: "countries", id: hoveredId },
+          { hover: false }
+        );
+      });
+
+      // 나라 클릭하여 선택/해제
       map.on("click", "country-fills", (e) => {
         const country = e.features[0];
         const a2 = country.properties.ISO_A2.toLowerCase();
