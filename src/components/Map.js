@@ -3,7 +3,7 @@ import mapboxgl from "mapbox-gl";
 mapboxgl.accessToken =
   "pk.eyJ1IjoiZ29kZWthIiwiYSI6ImNtOG54azZpbzA1ZmMybG9qejJ1aTVyNDcifQ.5J3bnCVQntAWizBEqIqLYQ";
 
-export default function Map({ $app, initialState, onClick }) {
+export default function Map({ $app, countries_ko, initialState, onClick }) {
   this.state = initialState;
 
   const $target = document.createElement("div");
@@ -43,6 +43,11 @@ export default function Map({ $app, initialState, onClick }) {
   };
 
   this.init = () => {
+    const $tooltip = document.createElement("div");
+    $tooltip.className = "country-tooltip";
+    $tooltip.style.display = "none";
+    $target.appendChild($tooltip);
+
     map.getCanvas().style.cursor = "default"; // 기본 커서로
 
     map.setRenderWorldCopies(false); // 루프 방지
@@ -123,11 +128,12 @@ export default function Map({ $app, initialState, onClick }) {
         }
       });
 
-      // 나라에 마우스오버 시 색칠
+      // 나라에 마우스오버 시 색칠 & 툴팁 띄우기
       let hoveredId = null;
 
       map.on("mousemove", "country-hovers", (e) => {
         const currentId = e.features[0].id;
+        const countryA2 = e.features[0].properties.ISO_A2.toLowerCase();
 
         // 다른 나라로 마우스 이동
         if (hoveredId !== null && hoveredId !== currentId) {
@@ -138,7 +144,6 @@ export default function Map({ $app, initialState, onClick }) {
           );
         }
 
-        // 레이어 바깥에서 안으로 마우스 이동
         if (hoveredId !== currentId) {
           // 새로 hover된 나라에 hover 설정
           hoveredId = currentId;
@@ -146,6 +151,16 @@ export default function Map({ $app, initialState, onClick }) {
             { source: "countries", id: hoveredId },
             { hover: true }
           );
+
+          const sameCountry = countries_ko.filter(
+            (c) => c.alpha2 === countryA2
+          )[0];
+          const countryName = sameCountry ? sameCountry.name : "-";
+
+          $tooltip.style.display = "block";
+          $tooltip.innerText = countryName;
+          $tooltip.style.top = e.originalEvent.pageY + "px";
+          $tooltip.style.left = e.originalEvent.pageX + "px";
         }
       });
 
@@ -154,6 +169,8 @@ export default function Map({ $app, initialState, onClick }) {
           { source: "countries", id: hoveredId },
           { hover: false }
         );
+
+        $tooltip.style.display = "none";
       });
 
       // 나라 클릭하여 선택/해제

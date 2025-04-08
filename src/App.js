@@ -16,6 +16,7 @@ export default function App($app) {
 
   const map = new Map({
     $app,
+    countries_ko,
     initialState: [],
     onClick: (select, countryA2) => {
       let newSelected = [...this.state.selectedCountries];
@@ -25,6 +26,7 @@ export default function App($app) {
       this.setState({ selectedCountries: newSelected });
     },
   });
+
   const searchField = new SearchField({
     $app,
     countries_ko,
