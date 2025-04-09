@@ -4,7 +4,7 @@ export default function SearchField({
   initialState,
   onCheck,
 }) {
-  this.state = initialState;
+  this.state = initialState; // { selectedCountries = [], inputString = "" }
   this.$target = document.createElement("div");
   this.$target.className = "search-container";
 
@@ -37,14 +37,7 @@ export default function SearchField({
     const $searchInput = document.querySelector("input.search-input");
 
     $searchInput.addEventListener("input", () => {
-      const $listItems = document.querySelectorAll("li.country-item");
-
-      $listItems.forEach(($item) => {
-        const countryName = $item.lastElementChild.innerHTML;
-        if (!countryName.includes($searchInput.value))
-          $item.classList.add("hidden");
-        else $item.classList.remove("hidden");
-      });
+      this.setState({ ...this.state, inputString: $searchInput.value });
     });
 
     // 나라 목록 display 여부
@@ -68,8 +61,10 @@ export default function SearchField({
     // 나라 목록만 리렌더링
     let temp = [];
     countries_ko.forEach((country) => {
-      const checked = this.state.includes(country.alpha2);
-      temp += `<li class="country-item">
+      const includes = country.name.includes(this.state.inputString); // 검색어 포함 여부
+      const checked = this.state.selectedCountries.includes(country.alpha2); // 체크 여부
+
+      temp += `<li class="country-item${!includes ? " hidden" : ""}">
             <input type="checkbox" name="country" id="${country.alpha2}" ${
         checked ? "checked" : ""
       } />

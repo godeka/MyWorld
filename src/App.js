@@ -11,7 +11,10 @@ export default function App($app) {
   this.setState = (newState) => {
     this.state = newState;
     map.setState(newState.selectedCountries);
-    searchField.setState(newState.selectedCountries);
+    searchField.setState({
+      ...searchField.state,
+      selectedCountries: newState.selectedCountries,
+    });
   };
 
   const map = new Map({
@@ -30,7 +33,7 @@ export default function App($app) {
   const searchField = new SearchField({
     $app,
     countries_ko,
-    initialState: [],
+    initialState: { selectedCountries: [], inputString: "" },
     onCheck: (checkbox) => {
       const countryA2 = checkbox.id;
       let newSelected = [...this.state.selectedCountries];
