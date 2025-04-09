@@ -34,11 +34,12 @@ export default function App($app) {
     $app,
     countries_ko,
     initialState: { selectedCountries: [], inputString: "" },
-    onCheck: (checkbox) => {
-      const countryA2 = checkbox.id;
-      let newSelected = [...this.state.selectedCountries];
+    onCheck: (listItem) => {
+      const countryA2 = listItem.id;
+      const checkbox = listItem.querySelector("span.checkbox");
 
-      if (checkbox.checked) {
+      let newSelected = [...this.state.selectedCountries];
+      if (!checkbox.classList.contains("checked")) {
         newSelected.push(countryA2);
       } else {
         newSelected = newSelected.filter((c) => c !== countryA2);

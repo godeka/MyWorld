@@ -18,8 +18,8 @@ export default function SearchField({
   this.init = () => {
     let temp = [];
     countries_ko.forEach((country) => {
-      temp += `<li class="country-item">
-            <input type="checkbox" name="country" id="${country.alpha2}" />
+      temp += `<li class="country-item" id="${country.alpha2}">
+            <span class="checkbox"></span>
             <label>${country.name}</label>
           </li>`;
     });
@@ -48,11 +48,11 @@ export default function SearchField({
       document.querySelector("div.select-country").classList.add("hidden");
     });
 
-    // 나라 선택
-    const $checkboxes = document.querySelectorAll("input[name='country']");
-    $checkboxes.forEach(($checkbox) => {
-      $checkbox.addEventListener("change", () => {
-        onCheck($checkbox);
+    // 나라 선택/해제
+    const $countryLists = document.querySelectorAll("li.country-item");
+    $countryLists.forEach(($li) => {
+      $li.addEventListener("click", () => {
+        onCheck($li);
       });
     });
   };
@@ -64,20 +64,20 @@ export default function SearchField({
       const includes = country.name.includes(this.state.inputString); // 검색어 포함 여부
       const checked = this.state.selectedCountries.includes(country.alpha2); // 체크 여부
 
-      temp += `<li class="country-item${!includes ? " hidden" : ""}">
-            <input type="checkbox" name="country" id="${country.alpha2}" ${
-        checked ? "checked" : ""
-      } />
+      temp += `<li class="country-item${!includes ? " hidden" : ""}" id="${
+        country.alpha2
+      }">
+            <span class="checkbox ${checked ? "checked" : ""}"></span>
             <label>${country.name}</label>
           </li>`;
     });
     document.querySelector("ul.select-list").innerHTML = temp;
 
-    // 나라 선택
-    const $checkboxes = document.querySelectorAll("input[name='country']");
-    $checkboxes.forEach(($checkbox) => {
-      $checkbox.addEventListener("change", () => {
-        onCheck($checkbox);
+    // 나라 선택/해제
+    const $countryLists = document.querySelectorAll("li.country-item");
+    $countryLists.forEach(($li) => {
+      $li.addEventListener("click", () => {
+        onCheck($li);
       });
     });
   };
