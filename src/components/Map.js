@@ -14,7 +14,11 @@ export default function Map({ $app, countries_ko, initialState, onClick }) {
     container: "map",
     center: [0, 0], // 경도, 위도
     zoom: 1.5,
-    style: "mapbox://styles/mapbox/light-v11",
+    style: {
+      version: 8,
+      sources: {},
+      layers: [],
+    },
     projection: "equirectangular", // 직사각형 투영
   });
 
@@ -88,7 +92,7 @@ export default function Map({ $app, countries_ko, initialState, onClick }) {
             "case",
             ["boolean", ["feature-state", "hover"], false],
             "rgb(84, 84, 84)", // hover=true인 나라의 색
-            "rgba(0,0,0,0)", // hover=false인 나라의 색 (투명)
+            "#fff", // hover=false인 나라의 색
           ],
           "fill-opacity": 0.5,
         },
@@ -114,13 +118,8 @@ export default function Map({ $app, countries_ko, initialState, onClick }) {
         type: "line",
         source: "countries",
         paint: {
-          "line-color": [
-            "case",
-            ["boolean", ["feature-state", "selected"], false],
-            "#fff", // selected=true인 나라 국경선
-            "rgba(0,0,0,0)", // 기본 색 (투명)
-          ],
-          "line-width": 0.5,
+          "line-color": "#000",
+          "line-width": 0.7,
         },
       });
 
