@@ -155,17 +155,16 @@ export default function Map({ $app, countries_ko, initialState, onClick }) {
             { source: "countries", id: hoveredId },
             { hover: true }
           );
-
-          const sameCountry = countries_ko.filter(
-            (c) => c.alpha2 === countryA2
-          )[0];
-          const countryName = sameCountry ? sameCountry.name : "-";
-
-          $tooltip.style.display = "block";
-          $tooltip.innerText = countryName;
-          $tooltip.style.top = e.originalEvent.pageY + "px";
-          $tooltip.style.left = e.originalEvent.pageX + "px";
         }
+        const sameCountry = countries_ko.filter(
+          (c) => c.alpha2 === countryA2
+        )[0];
+        const countryName = sameCountry ? sameCountry.name : "-";
+
+        $tooltip.style.display = "block";
+        $tooltip.innerText = countryName;
+        $tooltip.style.top = e.originalEvent.pageY + "px";
+        $tooltip.style.left = e.originalEvent.pageX + "px";
       });
 
       map.on("mouseout", "country-hovers", () => {
