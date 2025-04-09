@@ -109,16 +109,20 @@ export default function Map({ $app, countries_ko, initialState, onClick }) {
         },
       });
 
-      // map.addLayer({
-      //   id: "country-borders",
-      //   type: "line",
-      //   source: "countries",
-      //   layout: {},
-      //   paint: {
-      //     "line-color": "#fff",
-      //     "line-width": 0,
-      //   },
-      // });
+      map.addLayer({
+        id: "country-borders",
+        type: "line",
+        source: "countries",
+        paint: {
+          "line-color": [
+            "case",
+            ["boolean", ["feature-state", "selected"], false],
+            "#fff", // selected=true인 나라 국경선
+            "rgba(0,0,0,0)", // 기본 색 (투명)
+          ],
+          "line-width": 0.5,
+        },
+      });
 
       // 나라명 등 라벨 레이어 맨 위로 올리기
       ["country-label", "state-label", "place-label"].forEach((layerId) => {
