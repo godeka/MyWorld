@@ -25,14 +25,16 @@ export default function SearchField({
     });
 
     this.$target.innerHTML = `
-        <input type="text" class="search-country" placeholder="나라명을 검색하세요" />
-        <div class="select-container hidden">
+        <div class="search-country">
+            <input type="text" class="search-input" placeholder="나라명을 검색하세요" />
+        </div>
+        <div class="select-country hidden">
             <ul class="select-list">${temp}</ul>
         </div>
     `;
 
     // 검색 필터링
-    const $searchInput = document.querySelector("input.search-country");
+    const $searchInput = document.querySelector("input.search-input");
 
     $searchInput.addEventListener("input", () => {
       const $listItems = document.querySelectorAll("li.country-item");
@@ -47,10 +49,10 @@ export default function SearchField({
 
     // 나라 목록 display 여부
     this.$target.addEventListener("mouseenter", () => {
-      document.querySelector("div.select-container").classList.remove("hidden");
+      document.querySelector("div.select-country").classList.remove("hidden");
     });
     this.$target.addEventListener("mouseleave", () => {
-      document.querySelector("div.select-container").classList.add("hidden");
+      document.querySelector("div.select-country").classList.add("hidden");
     });
 
     // 나라 선택
