@@ -22,6 +22,20 @@ input:focus {
   display: none;
 }
 
+[type="checkbox"] {
+  appearance: none; /* 기본 style 제거 */
+  width: 0.8rem;
+  height: 0.8rem;
+  border: 1.5px solid white;
+  border-radius: 15%;
+  cursor: pointer;
+  margin-right: 5px;
+}
+[type="checkbox"]:checked {
+  background-image: url("../assets/check.png");
+  background-size: cover;
+}
+
 #map {
   position: absolute;
   top: 2rem;
@@ -59,11 +73,13 @@ input:focus {
 .select-country {
   background-color: rgba(0, 0, 0, 0);
   color: white;
-  width: 300px;
+  width: 250px;
   height: 80vh;
   overflow-y: auto;
   padding: 1rem 2rem;
-  border-radius: 0.5rem;
+}
+.country-item {
+  margin-bottom: 10px;
 }
 
 .country-tooltip {
