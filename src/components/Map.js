@@ -1,4 +1,5 @@
 import mapboxgl from "mapbox-gl";
+import html2canvas from "html2canvas";
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoiZ29kZWthIiwiYSI6ImNtOG54azZpbzA1ZmMybG9qejJ1aTVyNDcifQ.5J3bnCVQntAWizBEqIqLYQ";
@@ -20,6 +21,7 @@ export default function Map({ $app, countries_ko, initialState, onClick }) {
       layers: [],
     },
     projection: "equirectangular", // 직사각형 투영
+    preserveDrawingBuffer: true, // 이미지 저장을 위함
   });
 
   let countriesGeoJSON;
@@ -63,7 +65,7 @@ export default function Map({ $app, countries_ko, initialState, onClick }) {
     map.boxZoom.disable();
     map.doubleClickZoom.disable();
 
-    // 색칠 준비
+    // 지도 그리기
     map.on("load", async () => {
       await fetch("./src/data/countries.geojson")
         .then((res) => res.json())
@@ -131,6 +133,14 @@ export default function Map({ $app, countries_ko, initialState, onClick }) {
         }
       });
 
+      // 이미지 저장 버튼 생성
+      const $saveButton = document.createElement("button");
+      $saveButton.className = "save-button";
+      $saveButton.textContent = "지도 저장하기";
+      $app.appendChild($saveButton);
+
+      // interactions
+
       // 나라에 마우스오버 시 색칠 & 툴팁 띄우기
       let hoveredId = null;
 
@@ -192,6 +202,29 @@ export default function Map({ $app, countries_ko, initialState, onClick }) {
 
         // setState
         onClick(!selected, a2);
+      });
+
+      // 이미지로 저장
+      $saveButton.addEventListener("click", function () {
+        // 지도가 완전히 렌더링된 후 캡처
+        map.once("idle", function () {
+          setTimeout(function () {
+            html2canvas($app, {
+              scale: 2, // 고해상도 출력
+            })
+              .then(function (canvas) {
+                const link = document.createElement("a");
+                link.href = canvas.toDataURL("image/png");
+                link.download = "my_world.png";
+                link.click();
+              })
+              .catch(function (error) {
+                console.error("지도 이미지 생성 오류:", error);
+                alert("지도 저장에 실패했습니다.");
+              });
+          }, 500);
+        });
+        map.triggerRepaint();
       });
     });
   };

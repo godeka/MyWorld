@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "html2canvas": "^1.4.1",
     "mapbox-gl": "^3.10.0"
   },
   "devDependencies": {

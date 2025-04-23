@@ -4,10 +4,6 @@
   padding: 0px;
 }
 
-body {
-  background-color: black;
-}
-
 li {
   list-style: none;
 }
@@ -20,6 +16,11 @@ input:focus {
 
 .hidden {
   display: none;
+}
+
+#app {
+  min-height: 100vh;
+  background-color: black;
 }
 
 #map {
@@ -36,7 +37,7 @@ input:focus {
   width: fit-content;
   display: flex;
   flex-direction: column;
-  margin: 0.8rem 1.5rem;
+  padding: 0.8rem 1.5rem;
 }
 
 .search-country {
@@ -89,4 +90,11 @@ input:focus {
   position: absolute;
   color: white;
   font-size: 1rem;
+}
+
+.save-button {
+  position: absolute;
+  z-index: 2;
+  bottom: 10px;
+  right: 10px;
 }
