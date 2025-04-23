@@ -98,3 +98,10 @@ input:focus {
   bottom: 10px;
   right: 10px;
 }
+
+.info-container {
+  position: fixed;
+  top: 2rem;
+  right: 1rem;
+  color: white;
+}

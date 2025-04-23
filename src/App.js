@@ -2,6 +2,7 @@ import countries_ko from "./data/countries_ko.json";
 
 import Map from "./components/Map";
 import SearchField from "./components/SearchField";
+import InfoField from "./components/InfoField";
 
 export default function App($app) {
   this.state = {
@@ -15,6 +16,7 @@ export default function App($app) {
       ...searchField.state,
       selectedCountries: newState.selectedCountries,
     });
+    infoField.setState(newState.selectedCountries);
   };
 
   const map = new Map({
@@ -47,6 +49,8 @@ export default function App($app) {
       this.setState({ selectedCountries: newSelected });
     },
   });
+
+  const infoField = new InfoField({ $app, initialState: [] });
 
   this.init = () => {};
 }
