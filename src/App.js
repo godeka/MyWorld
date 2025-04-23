@@ -19,6 +19,15 @@ export default function App($app) {
     infoField.setState(newState.selectedCountries);
   };
 
+  // 리셋 버튼
+  this.$resetBtn = document.createElement("button");
+  this.$resetBtn.className = "reset-button hidden";
+  this.$resetBtn.textContent = "리셋하기";
+  this.$resetBtn.addEventListener("click", () => {
+    this.setState({ selectedCountries: [] });
+  });
+  $app.appendChild(this.$resetBtn);
+
   const map = new Map({
     $app,
     countries_ko,

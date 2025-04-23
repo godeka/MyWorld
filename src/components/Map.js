@@ -139,6 +139,10 @@ export default function Map({ $app, countries_ko, initialState, onClick }) {
       $saveButton.textContent = "지도 저장하기";
       $app.appendChild($saveButton);
 
+      // 리셋 버튼 활성화
+      const $resetButton = document.querySelector(".reset-button");
+      $resetButton.classList.remove("hidden");
+
       // interactions
 
       // 나라에 마우스오버 시 색칠 & 툴팁 띄우기
