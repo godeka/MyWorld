@@ -97,10 +97,10 @@ export default function Map({ $app, countries, initialState, onClick }) {
           "fill-color": [
             "case",
             ["boolean", ["feature-state", "hover"], false],
-            "rgb(84, 84, 84)", // hover=true인 나라의 색
+            "rgb(0, 0, 0)", // hover=true인 나라의 색
             "#fff", // hover=false인 나라의 색
           ],
-          "fill-opacity": 0.5,
+          "fill-opacity": 0.6,
         },
       });
 
@@ -113,7 +113,7 @@ export default function Map({ $app, countries, initialState, onClick }) {
             "case",
             ["boolean", ["feature-state", "selected"], false],
             "rgb(255, 94, 121)", // selected=true인 나라의 색
-            "rgba(0,0,0,0)", // 기본 색 (투명)
+            "rgba(141, 141, 141, 0.6)", // 기본 색 (투명)
           ],
           // "fill-opacity": 0.6,
         },
