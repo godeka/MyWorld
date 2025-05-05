@@ -1,0 +1,122 @@
+.message-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  z-index: 100;
+  visibility: hidden;
+}
+
+.message {
+  color: white;
+  font-size: 0;
+  font-weight: bold;
+  text-align: center;
+  transform: scale(0);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  z-index: 200; /* 메시지를 색종이보다 위에 표시 */
+  background-color: rgba(255, 255, 255, 0.7); /* 약간의 배경 추가 */
+  padding: 10px 25px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  opacity: 0;
+  transform: translate(0, 0);
+  z-index: 150; /* 색종이는 메시지보다 낮은 z-index */
+}
+
+/* 색종이 조각들의 다양한 색상 */
+.confetti-red {
+  background-color: #ff5252;
+}
+.confetti-blue {
+  background-color: #448aff;
+}
+.confetti-green {
+  background-color: #4caf50;
+}
+.confetti-yellow {
+  background-color: #ffd600;
+}
+.confetti-purple {
+  background-color: #9c27b0;
+}
+.confetti-orange {
+  background-color: #ff9800;
+}
+.confetti-pink {
+  background-color: #ff4081;
+}
+.confetti-cyan {
+  background-color: #00bcd4;
+}
+
+/* 색종이 별 모양 */
+.confetti-star {
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+}
+
+/* 색종이 직사각형 모양 */
+.confetti-rect {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+/* 색종이 원형 모양 */
+.confetti-circle {
+  border-radius: 50%;
+}
+
+/* 폭죽 효과 시작 */
+.message-container.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.message-container.active .message {
+  font-size: 3rem;
+  transform: scale(1);
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+
+@keyframes confettiExplosion {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--x-direction), var(--y-direction)) rotate(720deg);
+    opacity: 0;
+  }
+}

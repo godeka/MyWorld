@@ -5,6 +5,9 @@ import SearchField from "./components/SearchField";
 import InfoField from "./components/InfoField";
 import SelectLanguage from "./components/SelectLanguage";
 import MapUtilityPanel from "./components/MapUtilityPanel";
+import GreetingsEffect from "./components/GreetingsEffect";
+
+import { showFireworks } from "./utilty/selectEffect";
 
 export default function App($app) {
   this.state = {
@@ -31,8 +34,16 @@ export default function App($app) {
     onClick: (select, countryA2) => {
       let newSelected = [...this.state.selectedCountries];
 
-      if (select) newSelected.push(countryA2);
-      else newSelected = newSelected.filter((c) => c !== countryA2);
+      if (select) {
+        newSelected.push(countryA2);
+
+        // 인사말 효과 띄우기
+        const greetings = countries.filter((c) => c.alpha2 === countryA2)[0]
+          .greetings;
+        if (greetings) showFireworks(greetings);
+      } else {
+        newSelected = newSelected.filter((c) => c !== countryA2);
+      }
       this.setState({ ...this.state, selectedCountries: newSelected });
     },
   });
@@ -48,6 +59,11 @@ export default function App($app) {
       let newSelected = [...this.state.selectedCountries];
       if (!checkbox.classList.contains("checked")) {
         newSelected.push(countryA2);
+
+        // 인사말 효과 띄우기
+        const greetings = countries.filter((c) => c.alpha2 === countryA2)[0]
+          .greetings;
+        if (greetings) showFireworks(greetings);
       } else {
         newSelected = newSelected.filter((c) => c !== countryA2);
       }
@@ -74,4 +90,7 @@ export default function App($app) {
         lang: this.state.lang === "ko" ? "en" : "ko",
       }),
   });
+
+  // 나라 선택 시 인사말 띄우기 효과
+  new GreetingsEffect({ $app });
 }
