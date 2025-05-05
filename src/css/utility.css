@@ -16,10 +16,14 @@
 /* 상단 문구 */
 .info-container {
   position: fixed;
-  top: 1rem;
+  top: 1.5rem;
   left: 50%;
   transform: translateX(-50%);
   color: white;
+}
+.info-highlight {
+  color: rgb(255, 94, 121); /* 예: 노란색, 원하는 색상으로 변경 가능 */
+  font-weight: bold;
 }
 
 /* 지도 툴 */
