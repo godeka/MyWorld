@@ -20,7 +20,10 @@ input:focus {
 
 #app {
   min-height: 100vh;
-  background-color: black;
+  /* background-color: black; */
+  background-image: url(../assets/universe.jpg);
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 #map {
