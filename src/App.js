@@ -4,6 +4,7 @@ import Map from "./components/Map";
 import SearchField from "./components/SearchField";
 import InfoField from "./components/InfoField";
 import SelectLanguage from "./components/SelectLanguage";
+import MapUtilityPanel from "./components/MapUtilityPanel";
 
 export default function App($app) {
   this.state = {
@@ -19,17 +20,9 @@ export default function App($app) {
       lang: newState.lang,
       selectedCountries: newState.selectedCountries,
     });
+    mapUtilityPanel.setState(newState);
     infoField.setState(newState);
   };
-
-  // 리셋 버튼
-  this.$resetBtn = document.createElement("button");
-  this.$resetBtn.className = "reset-button hidden";
-  this.$resetBtn.textContent = this.state.lang === "ko" ? "리셋하기" : "Reset";
-  this.$resetBtn.addEventListener("click", () => {
-    this.setState({ ...this.state, selectedCountries: [] });
-  });
-  $app.appendChild(this.$resetBtn);
 
   const map = new Map({
     $app,
@@ -62,6 +55,14 @@ export default function App($app) {
     },
   });
 
+  const mapUtilityPanel = new MapUtilityPanel({
+    $app,
+    initialState: this.state,
+    onClickReset: () => {
+      this.setState({ ...this.state, selectedCountries: [] });
+    },
+  });
+
   const infoField = new InfoField({ $app, initialState: this.state });
 
   // 언어 설정
@@ -73,6 +74,4 @@ export default function App($app) {
         lang: this.state.lang === "ko" ? "en" : "ko",
       }),
   });
-
-  this.init = () => {};
 }

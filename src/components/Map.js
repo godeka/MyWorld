@@ -137,16 +137,9 @@ export default function Map({ $app, countries, initialState, onClick }) {
         }
       });
 
-      // 이미지 저장 버튼 생성
-      const $saveButton = document.createElement("button");
-      $saveButton.className = "save-button";
-      $saveButton.textContent =
-        this.state.lang === "ko" ? "이미지로 저장" : "Save as Image";
-      $app.appendChild($saveButton);
-
-      // 리셋 버튼 활성화
-      const $resetButton = document.querySelector(".reset-button");
-      $resetButton.classList.remove("hidden");
+      // 리셋 버튼, 이미지 저장 버튼 활성화
+      const $mapTools = document.querySelector(".map-tools");
+      $mapTools.classList.remove("hidden");
 
       // interactions
 
@@ -216,6 +209,7 @@ export default function Map({ $app, countries, initialState, onClick }) {
       });
 
       // 이미지로 저장
+      const $saveButton = $mapTools.querySelector(".save-button");
       $saveButton.addEventListener("click", function () {
         // 지도가 완전히 렌더링된 후 캡처
         map.once("idle", function () {
