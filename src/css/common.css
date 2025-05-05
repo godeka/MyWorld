@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+li {
+  list-style: none;
+}
+input {
+  border: none;
+}
+input:focus {
+  outline: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.checkbox {
+  display: inline-flex;
+  width: 0.8rem;
+  height: 0.8rem;
+  border: 1.5px solid white;
+  border-radius: 15%;
+  margin-right: 5px;
+}
+.checked {
+  background-image: url("../assets/check.png");
+  background-size: cover;
+}
+
+#app {
+  min-height: 100vh;
+  /* background-color: black; */
+  background-image: url(../assets/universe.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+}

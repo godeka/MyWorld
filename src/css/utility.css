@@ -1,0 +1,51 @@
+/* 언어 설정 */
+.select-lang {
+  position: absolute;
+  z-index: 2;
+  top: 10px;
+  right: 2rem;
+  width: 5rem;
+  display: flex;
+  justify-content: space-between;
+  color: #666;
+}
+.lang-text.active {
+  color: white;
+}
+
+/* 상단 문구 */
+.info-container {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+}
+
+/* 지도 툴 */
+.map-tools {
+  position: absolute;
+  z-index: 2;
+  bottom: 0.5rem;
+  right: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.map-tools button {
+  background: none;
+  border: 1px solid white;
+  border-radius: 1rem;
+  min-width: 100px;
+  padding: 0.5rem 0.7rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 0.5rem;
+}
+
+.map-tools svg {
+  width: 1rem;
+  height: 1rem;
+}
