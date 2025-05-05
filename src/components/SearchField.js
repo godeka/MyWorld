@@ -1,10 +1,10 @@
 export default function SearchField({
   $app,
-  countries_ko,
+  countries,
   initialState,
   onCheck,
 }) {
-  this.state = initialState; // { selectedCountries = [], inputString = "" }
+  this.state = { ...initialState, inputString: "" }; // { lang: "ko", selectedCountries: [], inputString: "" }
   this.$target = document.createElement("div");
   this.$target.className = "search-container";
 
@@ -17,16 +17,21 @@ export default function SearchField({
 
   this.init = () => {
     let temp = [];
-    countries_ko.forEach((country) => {
+    countries.forEach((country) => {
+      const countryName = this.state.lang === "ko" ? country.ko : country.en;
       temp += `<li class="country-item" id="${country.alpha2}">
             <span class="checkbox"></span>
-            <label>${country.name}</label>
+            <label>${countryName}</label>
           </li>`;
     });
 
     this.$target.innerHTML = `
         <div class="search-country">
-            <input type="text" class="search-input" placeholder="나라명을 검색하세요" />
+            <input type="text" class="search-input" placeholder="${
+              this.state.lang === "ko"
+                ? "나라명을 검색하세요"
+                : "Search for a country"
+            }" />
         </div>
         <div class="select-country hidden">
             <ul class="select-list">${temp}</ul>
@@ -58,17 +63,26 @@ export default function SearchField({
   };
 
   this.render = () => {
-    // 나라 목록만 리렌더링
+    // 입력창 placeholder
+    const placeHolder =
+      this.state.lang === "ko" ? "나라명을 검색하세요" : "Search for a country";
+    this.$target
+      .querySelector(".search-input")
+      .setAttribute("placeholder", placeHolder);
+
+    // 나라 목록
     let temp = [];
-    countries_ko.forEach((country) => {
-      const includes = country.name.includes(this.state.inputString); // 검색어 포함 여부
+    countries.forEach((country) => {
+      const countryName = this.state.lang === "ko" ? country.ko : country.en;
+
+      const includes = countryName.includes(this.state.inputString); // 검색어 포함 여부
       const checked = this.state.selectedCountries.includes(country.alpha2); // 체크 여부
 
       temp += `<li class="country-item${!includes ? " hidden" : ""}" id="${
         country.alpha2
       }">
             <span class="checkbox ${checked ? "checked" : ""}"></span>
-            <label>${country.name}</label>
+            <label>${countryName}</label>
           </li>`;
     });
     document.querySelector("ul.select-list").innerHTML = temp;

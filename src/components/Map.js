@@ -4,12 +4,12 @@ import html2canvas from "html2canvas";
 mapboxgl.accessToken =
   "pk.eyJ1IjoiZ29kZWthIiwiYSI6ImNtOG54azZpbzA1ZmMybG9qejJ1aTVyNDcifQ.5J3bnCVQntAWizBEqIqLYQ";
 
-export default function Map({ $app, countries_ko, initialState, onClick }) {
+export default function Map({ $app, countries, initialState, onClick }) {
   this.state = initialState;
 
-  const $target = document.createElement("div");
-  $target.id = "map";
-  $app.appendChild($target);
+  this.$target = document.createElement("div");
+  this.$target.id = "map";
+  $app.appendChild(this.$target);
 
   const map = new mapboxgl.Map({
     container: "map",
@@ -39,20 +39,24 @@ export default function Map({ $app, countries_ko, initialState, onClick }) {
 
     features.forEach((country) => {
       const a2 = country.properties.ISO_A2.toLowerCase();
-      const selected = this.state.includes(a2);
+      const selected = this.state.selectedCountries.includes(a2);
 
       map.setFeatureState(
         { source: "countries", id: country.id },
         { selected: selected }
       );
     });
+
+    // 이미지 저장 버튼 글씨
+    $app.querySelector(".save-button").textContent =
+      this.state.lang === "ko" ? "이미지로 저장" : "Save as Image";
   };
 
   this.init = () => {
     const $tooltip = document.createElement("div");
     $tooltip.className = "country-tooltip";
     $tooltip.style.display = "none";
-    $target.appendChild($tooltip);
+    this.$target.appendChild($tooltip);
 
     map.getCanvas().style.cursor = "default"; // 기본 커서로
 
@@ -136,7 +140,8 @@ export default function Map({ $app, countries_ko, initialState, onClick }) {
       // 이미지 저장 버튼 생성
       const $saveButton = document.createElement("button");
       $saveButton.className = "save-button";
-      $saveButton.textContent = "지도 저장하기";
+      $saveButton.textContent =
+        this.state.lang === "ko" ? "이미지로 저장" : "Save as Image";
       $app.appendChild($saveButton);
 
       // 리셋 버튼 활성화
@@ -169,10 +174,12 @@ export default function Map({ $app, countries_ko, initialState, onClick }) {
             { hover: true }
           );
         }
-        const sameCountry = countries_ko.filter(
-          (c) => c.alpha2 === countryA2
-        )[0];
-        const countryName = sameCountry ? sameCountry.name : "-";
+        const sameCountry = countries.filter((c) => c.alpha2 === countryA2)[0];
+        let countryName;
+        if (sameCountry)
+          countryName =
+            this.state.lang == "ko" ? sameCountry.ko : sameCountry.en;
+        else countryName = "-";
 
         $tooltip.style.display = "block";
         $tooltip.innerText = countryName;

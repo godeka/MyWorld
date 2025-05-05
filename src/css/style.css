@@ -34,7 +34,7 @@ input:focus {
 .search-container {
   position: relative;
   z-index: 2;
-  width: fit-content;
+  width: var(--container-width, fit-content);
   display: flex;
   flex-direction: column;
   padding: 0.8rem 1.5rem;
@@ -105,9 +105,24 @@ input:focus {
   right: 6rem;
 }
 
+.select-lang {
+  position: absolute;
+  z-index: 2;
+  top: 10px;
+  right: 2rem;
+  width: 5rem;
+  display: flex;
+  justify-content: space-between;
+  color: #666;
+}
+.lang-text.active {
+  color: white;
+}
+
 .info-container {
   position: fixed;
-  top: 2rem;
-  right: 1rem;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
   color: white;
 }
