@@ -16,8 +16,15 @@ export default function SearchField({
   };
 
   this.init = () => {
+    // 나라 이름에 따라 정렬
+    const sortedCountries = [...countries].sort((a, b) => {
+      const nameA = this.state.lang === "ko" ? a.ko : a.en;
+      const nameB = this.state.lang === "ko" ? b.ko : b.en;
+      return nameA.localeCompare(nameB);
+    });
+
     let temp = [];
-    countries.forEach((country) => {
+    sortedCountries.forEach((country) => {
       const countryName = this.state.lang === "ko" ? country.ko : country.en;
       temp += `<li class="country-item" id="${country.alpha2}">
             <span class="checkbox"></span>
@@ -75,8 +82,13 @@ export default function SearchField({
       .setAttribute("placeholder", placeHolder);
 
     // 나라 목록
+    const sortedCountries = [...countries].sort((a, b) => {
+      const nameA = this.state.lang === "ko" ? a.ko : a.en;
+      const nameB = this.state.lang === "ko" ? b.ko : b.en;
+      return nameA.localeCompare(nameB);
+    });
     let temp = [];
-    countries.forEach((country) => {
+    sortedCountries.forEach((country) => {
       const countryName = this.state.lang === "ko" ? country.ko : country.en;
 
       const includes = countryName.includes(this.state.inputString); // 검색어 포함 여부
