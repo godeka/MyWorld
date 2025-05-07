@@ -1,6 +1,11 @@
-export function showFireworks(message) {
+export function showFireworks(message, lang) {
   const $messageContainer = document.querySelector(".message-container");
   const $messageBox = document.querySelector(".message");
+
+  // Web Speech API로 음성 띄우기
+  const utterance = new SpeechSynthesisUtterance(message);
+  utterance.lang = lang;
+  speechSynthesis.speak(utterance);
 
   // 메시지 컨테이너 활성화
   $messageContainer.classList.add("active");

@@ -38,9 +38,10 @@ export default function App($app) {
         newSelected.push(countryA2);
 
         // 인사말 효과 띄우기
-        const greetings = countries.filter((c) => c.alpha2 === countryA2)[0]
-          .greetings;
-        if (greetings) showFireworks(greetings);
+        const { greetings, lang } = countries.filter(
+          (c) => c.alpha2 === countryA2
+        )[0];
+        if (greetings) showFireworks(greetings, lang);
       } else {
         newSelected = newSelected.filter((c) => c !== countryA2);
       }

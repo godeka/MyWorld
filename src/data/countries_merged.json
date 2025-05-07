@@ -20,7 +20,8 @@
     "alpha3": "alb",
     "en": "Albania",
     "ko": "알바니아",
-    "greetings": "Përshëndetje"
+    "greetings": "Përshëndetje",
+    "lang": "sq-AL"
   },
   {
     "id": 12,
@@ -28,7 +29,8 @@
     "alpha3": "dza",
     "en": "Algeria",
     "ko": "알제리",
-    "greetings": "السلام عليكم"
+    "greetings": "السلام عليكم",
+    "lang": "ar-DZ"
   },
   {
     "id": 16,
@@ -68,7 +70,8 @@
     "alpha3": "ata",
     "en": "Antarctica",
     "ko": "남극",
-    "greetings": "Hello"
+    "greetings": "Hello",
+    "lang": "en-US"
   },
   {
     "id": 28,
@@ -84,7 +87,8 @@
     "alpha3": "arg",
     "en": "Argentina",
     "ko": "아르헨티나",
-    "greetings": "Hola"
+    "greetings": "Hola",
+    "lang": "es-AR"
   },
   {
     "id": 51,
@@ -108,7 +112,8 @@
     "alpha3": "aus",
     "en": "Australia",
     "ko": "오스트레일리아",
-    "greetings": "G'day"
+    "greetings": "G'day",
+    "lang": "en-AU"
   },
   {
     "id": 40,
@@ -124,7 +129,8 @@
     "alpha3": "aze",
     "en": "Azerbaijan",
     "ko": "아제르바이잔",
-    "greetings": "Salam"
+    "greetings": "Salam",
+    "lang": "az-AZ"
   },
   {
     "id": 44,
@@ -132,7 +138,8 @@
     "alpha3": "bhs",
     "en": "Bahamas",
     "ko": "바하마",
-    "greetings": "Hello"
+    "greetings": "Hello",
+    "lang": "en-US"
   },
   {
     "id": 48,
@@ -140,7 +147,8 @@
     "alpha3": "bhr",
     "en": "Bahrain",
     "ko": "바레인",
-    "greetings": "مرحبا"
+    "greetings": "مرحبا",
+    "lang": "ar-BH"
   },
   {
     "id": 50,
@@ -148,7 +156,8 @@
     "alpha3": "bgd",
     "en": "Bangladesh",
     "ko": "방글라데시",
-    "greetings": "হ্যালো"
+    "greetings": "হ্যালো",
+    "lang": "bn-BD"
   },
   {
     "id": 52,
@@ -172,7 +181,8 @@
     "alpha3": "bel",
     "en": "Belgium",
     "ko": "벨기에",
-    "greetings": "Hallo"
+    "greetings": "Hallo",
+    "lang": "nl-BE"
   },
   {
     "id": 84,
@@ -212,7 +222,8 @@
     "alpha3": "bol",
     "en": "Bolivia, Plurinational State of",
     "ko": "볼리비아",
-    "greetings": "Hola"
+    "greetings": "Hola",
+    "lang": "es-BO"
   },
   {
     "id": 535,
@@ -250,7 +261,8 @@
     "alpha3": "bra",
     "en": "Brazil",
     "ko": "브라질",
-    "greetings": "Olá"
+    "greetings": "Olá",
+    "lang": "pt-BR"
   },
   {
     "id": 86,
@@ -273,7 +285,8 @@
     "alpha3": "bgr",
     "en": "Bulgaria",
     "ko": "불가리아",
-    "greetings": "Здравейте"
+    "greetings": "Здравейте",
+    "lang": "bg-BG"
   },
   {
     "id": 854,
@@ -305,7 +318,8 @@
     "alpha3": "khm",
     "en": "Cambodia",
     "ko": "캄보디아",
-    "greetings": "សួស្តី"
+    "greetings": "សួស្តី",
+    "lang": "km-KH"
   },
   {
     "id": 120,
@@ -321,7 +335,8 @@
     "alpha3": "can",
     "en": "Canada",
     "ko": "캐나다",
-    "greetings": "Hello"
+    "greetings": "Hello",
+    "lang": "en-CA"
   },
   {
     "id": 136,
@@ -352,7 +367,8 @@
     "alpha3": "chl",
     "en": "Chile",
     "ko": "칠레",
-    "greetings": "Hola"
+    "greetings": "Hola",
+    "lang": "es-CL"
   },
   {
     "id": 156,
@@ -360,7 +376,8 @@
     "alpha3": "chn",
     "en": "China",
     "ko": "중국",
-    "greetings": "你好"
+    "greetings": "你好",
+    "lang": "zh-CN"
   },
   {
     "id": 162,
@@ -382,7 +399,8 @@
     "alpha3": "col",
     "en": "Colombia",
     "ko": "콜롬비아",
-    "greetings": "Hola"
+    "greetings": "Hola",
+    "lang": "es-CO"
   },
   {
     "id": 174,
@@ -398,7 +416,8 @@
     "alpha3": "cog",
     "en": "Congo",
     "ko": "콩고 공화국",
-    "greetings": "Bonjour"
+    "greetings": "Bonjour",
+    "lang": "fr-FR"
   },
   {
     "id": 180,
@@ -406,7 +425,8 @@
     "alpha3": "cod",
     "en": "Congo, Democratic Republic of the",
     "ko": "콩고 민주 공화국",
-    "greetings": "Bonjour"
+    "greetings": "Bonjour",
+    "lang": "fr-FR"
   },
   {
     "id": 184,
@@ -421,7 +441,8 @@
     "alpha3": "cri",
     "en": "Costa Rica",
     "ko": "코스타리카",
-    "greetings": "Hola"
+    "greetings": "Hola",
+    "lang": "es-CR"
   },
   {
     "id": 384,
@@ -437,7 +458,8 @@
     "alpha3": "hrv",
     "en": "Croatia",
     "ko": "크로아티아",
-    "greetings": "Bok"
+    "greetings": "Bok",
+    "lang": "hr-HR"
   },
   {
     "id": 192,
@@ -468,7 +490,8 @@
     "alpha3": "cze",
     "en": "Czechia",
     "ko": "체코",
-    "greetings": "Ahoj"
+    "greetings": "Ahoj",
+    "lang": "cs-CZ"
   },
   {
     "id": 208,
@@ -476,7 +499,8 @@
     "alpha3": "dnk",
     "en": "Denmark",
     "ko": "덴마크",
-    "greetings": "Hej"
+    "greetings": "Hej",
+    "lang": "da-DK"
   },
   {
     "id": 262,
@@ -500,7 +524,8 @@
     "alpha3": "dom",
     "en": "Dominican Republic",
     "ko": "도미니카 공화국",
-    "greetings": "Hola"
+    "greetings": "Hola",
+    "lang": "es-DO"
   },
   {
     "id": 218,
@@ -508,7 +533,8 @@
     "alpha3": "ecu",
     "en": "Ecuador",
     "ko": "에콰도르",
-    "greetings": "Hola"
+    "greetings": "Hola",
+    "lang": "es-EC"
   },
   {
     "id": 818,
@@ -516,7 +542,8 @@
     "alpha3": "egy",
     "en": "Egypt",
     "ko": "이집트",
-    "greetings": "مرحبا"
+    "greetings": "مرحبا",
+    "lang": "ar-EG"
   },
   {
     "id": 222,
@@ -524,7 +551,8 @@
     "alpha3": "slv",
     "en": "El Salvador",
     "ko": "엘살바도르",
-    "greetings": "Hola"
+    "greetings": "Hola",
+    "lang": "es-SV"
   },
   {
     "id": 226,
@@ -548,7 +576,8 @@
     "alpha3": "est",
     "en": "Estonia",
     "ko": "에스토니아",
-    "greetings": "Tere"
+    "greetings": "Tere",
+    "lang": "et-EE"
   },
   {
     "id": 748,
@@ -564,7 +593,8 @@
     "alpha3": "eth",
     "en": "Ethiopia",
     "ko": "에티오피아",
-    "greetings": "Selam"
+    "greetings": "Selam",
+    "lang": "am-ET"
   },
   {
     "id": 238,
@@ -594,7 +624,8 @@
     "alpha3": "fin",
     "en": "Finland",
     "ko": "핀란드",
-    "greetings": "Hei"
+    "greetings": "Hei",
+    "lang": "fi-FI"
   },
   {
     "id": 250,
@@ -602,7 +633,8 @@
     "alpha3": "fra",
     "en": "France",
     "ko": "프랑스",
-    "greetings": "Bonjour"
+    "greetings": "Bonjour",
+    "lang": "fr-FR"
   },
   {
     "id": 254,
@@ -647,7 +679,8 @@
     "alpha3": "geo",
     "en": "Georgia",
     "ko": "조지아",
-    "greetings": "გამარჯობა"
+    "greetings": "გამარჯობა",
+    "lang": "ka-GE"
   },
   {
     "id": 276,
@@ -655,7 +688,8 @@
     "alpha3": "deu",
     "en": "Germany",
     "ko": "독일",
-    "greetings": "Hallo"
+    "greetings": "Hallo",
+    "lang": "de-DE"
   },
   {
     "id": 288,
@@ -663,7 +697,8 @@
     "alpha3": "gha",
     "en": "Ghana",
     "ko": "가나",
-    "greetings": "Hello"
+    "greetings": "Hello",
+    "lang": "en-GH"
   },
   {
     "id": 292,
@@ -678,7 +713,8 @@
     "alpha3": "grc",
     "en": "Greece",
     "ko": "그리스",
-    "greetings": "Γειά σας"
+    "greetings": "Γειά σας",
+    "lang": "el-GR"
   },
   {
     "id": 304,
@@ -715,7 +751,8 @@
     "alpha3": "gtm",
     "en": "Guatemala",
     "ko": "과테말라",
-    "greetings": "Hola"
+    "greetings": "Hola",
+    "lang": "es-GT"
   },
   {
     "id": 831,
@@ -777,7 +814,8 @@
     "alpha3": "hnd",
     "en": "Honduras",
     "ko": "온두라스",
-    "greetings": "Hola"
+    "greetings": "Hola",
+    "lang": "es-HN"
   },
   {
     "id": 344,
@@ -792,7 +830,8 @@
     "alpha3": "hun",
     "en": "Hungary",
     "ko": "헝가리",
-    "greetings": "Helló"
+    "greetings": "Helló",
+    "lang": "hu-HU"
   },
   {
     "id": 352,
@@ -800,7 +839,8 @@
     "alpha3": "isl",
     "en": "Iceland",
     "ko": "아이슬란드",
-    "greetings": "Halló"
+    "greetings": "Halló",
+    "lang": "is-IS"
   },
   {
     "id": 356,
@@ -808,7 +848,8 @@
     "alpha3": "ind",
     "en": "India",
     "ko": "인도",
-    "greetings": "नमस्ते"
+    "greetings": "नमस्ते",
+    "lang": "hi-IN"
   },
   {
     "id": 360,
@@ -816,7 +857,8 @@
     "alpha3": "idn",
     "en": "Indonesia",
     "ko": "인도네시아",
-    "greetings": "Halo"
+    "greetings": "Halo",
+    "lang": "id-ID"
   },
   {
     "id": 364,
@@ -824,7 +866,8 @@
     "alpha3": "irn",
     "en": "Iran, Islamic Republic of",
     "ko": "이란",
-    "greetings": "سلام"
+    "greetings": "سلام",
+    "lang": "fa-IR"
   },
   {
     "id": 368,
@@ -832,7 +875,8 @@
     "alpha3": "irq",
     "en": "Iraq",
     "ko": "이라크",
-    "greetings": "مرحبا"
+    "greetings": "مرحبا",
+    "lang": "ar-IQ"
   },
   {
     "id": 372,
@@ -840,7 +884,8 @@
     "alpha3": "irl",
     "en": "Ireland",
     "ko": "아일랜드",
-    "greetings": "Hello"
+    "greetings": "Hello",
+    "lang": "en-IE"
   },
   {
     "id": 833,
@@ -855,7 +900,8 @@
     "alpha3": "isr",
     "en": "Israel",
     "ko": "이스라엘",
-    "greetings": "שלום"
+    "greetings": "שלום",
+    "lang": "he-IL"
   },
   {
     "id": 380,
@@ -863,7 +909,8 @@
     "alpha3": "ita",
     "en": "Italy",
     "ko": "이탈리아",
-    "greetings": "Ciao"
+    "greetings": "Ciao",
+    "lang": "it-IT"
   },
   {
     "id": 388,
@@ -879,7 +926,8 @@
     "alpha3": "jpn",
     "en": "Japan",
     "ko": "일본",
-    "greetings": "こんにちは"
+    "greetings": "こんにちは",
+    "lang": "ja-JP"
   },
   {
     "id": 832,
@@ -894,7 +942,8 @@
     "alpha3": "jor",
     "en": "Jordan",
     "ko": "요르단",
-    "greetings": "مرحبا"
+    "greetings": "مرحبا",
+    "lang": "ar-JO"
   },
   {
     "id": 398,
@@ -902,7 +951,8 @@
     "alpha3": "kaz",
     "en": "Kazakhstan",
     "ko": "카자흐스탄",
-    "greetings": "Сәлем"
+    "greetings": "Сәлем",
+    "lang": "kk-KZ"
   },
   {
     "id": 404,
@@ -910,7 +960,8 @@
     "alpha3": "ken",
     "en": "Kenya",
     "ko": "케냐",
-    "greetings": "Hello"
+    "greetings": "Hello",
+    "lang": "en-KE"
   },
   {
     "id": 296,
@@ -934,7 +985,8 @@
     "alpha3": "kor",
     "en": "Korea, Republic of",
     "ko": "대한민국",
-    "greetings": "안녕하세요"
+    "greetings": "안녕하세요",
+    "lang": "ko-KR"
   },
   {
     "id": 414,
@@ -942,7 +994,8 @@
     "alpha3": "kwt",
     "en": "Kuwait",
     "ko": "쿠웨이트",
-    "greetings": "مرحبا"
+    "greetings": "مرحبا",
+    "lang": "ar-KW"
   },
   {
     "id": 417,
@@ -958,7 +1011,8 @@
     "alpha3": "lao",
     "en": "Lao People's Democratic Republic",
     "ko": "라오스",
-    "greetings": "ສະບາຍດີ"
+    "greetings": "ສະບາຍດີ",
+    "lang": "lo-LA"
   },
   {
     "id": 428,
@@ -966,7 +1020,8 @@
     "alpha3": "lva",
     "en": "Latvia",
     "ko": "라트비아",
-    "greetings": "Sveiki"
+    "greetings": "Sveiki",
+    "lang": "lv-LV"
   },
   {
     "id": 422,
@@ -974,7 +1029,8 @@
     "alpha3": "lbn",
     "en": "Lebanon",
     "ko": "레바논",
-    "greetings": "مرحبا"
+    "greetings": "مرحبا",
+    "lang": "ar-LB"
   },
   {
     "id": 426,
@@ -1014,7 +1070,8 @@
     "alpha3": "ltu",
     "en": "Lithuania",
     "ko": "리투아니아",
-    "greetings": "Labas"
+    "greetings": "Labas",
+    "lang": "lt-LT"
   },
   {
     "id": 442,
@@ -1053,7 +1110,8 @@
     "alpha3": "mys",
     "en": "Malaysia",
     "ko": "말레이시아",
-    "greetings": "Halo"
+    "greetings": "Halo",
+    "lang": "ms-MY"
   },
   {
     "id": 462,
@@ -1123,7 +1181,8 @@
     "alpha3": "mex",
     "en": "Mexico",
     "ko": "멕시코",
-    "greetings": "Hola"
+    "greetings": "Hola",
+    "lang": "es-MX"
   },
   {
     "id": 583,
@@ -1155,7 +1214,8 @@
     "alpha3": "mng",
     "en": "Mongolia",
     "ko": "몽골",
-    "greetings": "Сайн байна уу"
+    "greetings": "Сайн байна уу",
+    "lang": "mn-MN"
   },
   {
     "id": 499,
@@ -1178,7 +1238,8 @@
     "alpha3": "mar",
     "en": "Morocco",
     "ko": "모로코",
-    "greetings": "مرحبا"
+    "greetings": "مرحبا",
+    "lang": "ar-MA"
   },
   {
     "id": 508,
@@ -1194,7 +1255,8 @@
     "alpha3": "mmr",
     "en": "Myanmar",
     "ko": "미얀마",
-    "greetings": "မင်္ဂလာပါ"
+    "greetings": "မင်္ဂလာပါ",
+    "lang": "my-MM"
   },
   {
     "id": 516,
@@ -1218,7 +1280,8 @@
     "alpha3": "npl",
     "en": "Nepal",
     "ko": "네팔",
-    "greetings": "नमस्ते"
+    "greetings": "नमस्ते",
+    "lang": "ne-NP"
   },
   {
     "id": 528,
@@ -1226,7 +1289,8 @@
     "alpha3": "nld",
     "en": "Netherlands",
     "ko": "네덜란드",
-    "greetings": "Hallo"
+    "greetings": "Hallo",
+    "lang": "nl-NL"
   },
   {
     "id": 540,
@@ -1241,7 +1305,8 @@
     "alpha3": "nzl",
     "en": "New Zealand",
     "ko": "뉴질랜드",
-    "greetings": "Hello"
+    "greetings": "Hello",
+    "lang": "en-NZ"
   },
   {
     "id": 558,
@@ -1249,7 +1314,8 @@
     "alpha3": "nic",
     "en": "Nicaragua",
     "ko": "니카라과",
-    "greetings": "Hola"
+    "greetings": "Hola",
+    "lang": "es-NI"
   },
   {
     "id": 562,
@@ -1265,7 +1331,8 @@
     "alpha3": "nga",
     "en": "Nigeria",
     "ko": "나이지리아",
-    "greetings": "Hello"
+    "greetings": "Hello",
+    "lang": "en-NG"
   },
   {
     "id": 570,
@@ -1287,7 +1354,8 @@
     "alpha3": "mkd",
     "en": "North Macedonia",
     "ko": "북마케도니아",
-    "greetings": "Здраво"
+    "greetings": "Здраво",
+    "lang": "mk-MK"
   },
   {
     "id": 580,
@@ -1310,7 +1378,8 @@
     "alpha3": "omn",
     "en": "Oman",
     "ko": "오만",
-    "greetings": "مرحبا"
+    "greetings": "مرحبا",
+    "lang": "ar-OM"
   },
   {
     "id": 586,
@@ -1318,7 +1387,8 @@
     "alpha3": "pak",
     "en": "Pakistan",
     "ko": "파키스탄",
-    "greetings": "سلام"
+    "greetings": "سلام",
+    "lang": "ur-PK"
   },
   {
     "id": 585,
@@ -1341,7 +1411,8 @@
     "alpha3": "pan",
     "en": "Panama",
     "ko": "파나마",
-    "greetings": "Hola"
+    "greetings": "Hola",
+    "lang": "es-PA"
   },
   {
     "id": 598,
@@ -1357,7 +1428,8 @@
     "alpha3": "pry",
     "en": "Paraguay",
     "ko": "파라과이",
-    "greetings": "Hola"
+    "greetings": "Hola",
+    "lang": "es-PY"
   },
   {
     "id": 604,
@@ -1365,7 +1437,8 @@
     "alpha3": "per",
     "en": "Peru",
     "ko": "페루",
-    "greetings": "Hola"
+    "greetings": "Hola",
+    "lang": "es-PE"
   },
   {
     "id": 608,
@@ -1373,7 +1446,8 @@
     "alpha3": "phl",
     "en": "Philippines",
     "ko": "필리핀",
-    "greetings": "Kamusta"
+    "greetings": "Kamusta",
+    "lang": "en-PH"
   },
   {
     "id": 612,
@@ -1388,7 +1462,8 @@
     "alpha3": "pol",
     "en": "Poland",
     "ko": "폴란드",
-    "greetings": "Cześć"
+    "greetings": "Cześć",
+    "lang": "pl-PL"
   },
   {
     "id": 620,
@@ -1396,7 +1471,8 @@
     "alpha3": "prt",
     "en": "Portugal",
     "ko": "포르투갈",
-    "greetings": "Olá"
+    "greetings": "Olá",
+    "lang": "pt-PT"
   },
   {
     "id": 630,
@@ -1411,7 +1487,8 @@
     "alpha3": "qat",
     "en": "Qatar",
     "ko": "카타르",
-    "greetings": "مرحبا"
+    "greetings": "مرحبا",
+    "lang": "ar-QA"
   },
   {
     "id": 638,
@@ -1426,7 +1503,8 @@
     "alpha3": "rou",
     "en": "Romania",
     "ko": "루마니아",
-    "greetings": "Salut"
+    "greetings": "Salut",
+    "lang": "ro-RO"
   },
   {
     "id": 643,
@@ -1434,7 +1512,8 @@
     "alpha3": "rus",
     "en": "Russian Federation",
     "ko": "러시아",
-    "greetings": "Здравствуйте"
+    "greetings": "Здравствуйте",
+    "lang": "ru-RU"
   },
   {
     "id": 646,
@@ -1526,7 +1605,8 @@
     "alpha3": "sau",
     "en": "Saudi Arabia",
     "ko": "사우디아라비아",
-    "greetings": "مرحبا"
+    "greetings": "مرحبا",
+    "lang": "ar-SA"
   },
   {
     "id": 686,
@@ -1542,7 +1622,8 @@
     "alpha3": "srb",
     "en": "Serbia",
     "ko": "세르비아",
-    "greetings": "Zdravo"
+    "greetings": "Zdravo",
+    "lang": "sr-RS"
   },
   {
     "id": 690,
@@ -1566,7 +1647,8 @@
     "alpha3": "sgp",
     "en": "Singapore",
     "ko": "싱가포르",
-    "greetings": "Hello"
+    "greetings": "Hello",
+    "lang": "en-SG"
   },
   {
     "id": 534,
@@ -1581,7 +1663,8 @@
     "alpha3": "svk",
     "en": "Slovakia",
     "ko": "슬로바키아",
-    "greetings": "Ahoj"
+    "greetings": "Ahoj",
+    "lang": "sk-SK"
   },
   {
     "id": 705,
@@ -1589,7 +1672,8 @@
     "alpha3": "svn",
     "en": "Slovenia",
     "ko": "슬로베니아",
-    "greetings": "Živjo"
+    "greetings": "Živjo",
+    "lang": "sl-SI"
   },
   {
     "id": 90,
@@ -1613,7 +1697,8 @@
     "alpha3": "zaf",
     "en": "South Africa",
     "ko": "남아프리카 공화국",
-    "greetings": "Hello"
+    "greetings": "Hello",
+    "lang": "en-ZA"
   },
   {
     "id": 239,
@@ -1636,7 +1721,8 @@
     "alpha3": "esp",
     "en": "Spain",
     "ko": "스페인",
-    "greetings": "Hola"
+    "greetings": "Hola",
+    "lang": "es-ES"
   },
   {
     "id": 144,
@@ -1644,7 +1730,8 @@
     "alpha3": "lka",
     "en": "Sri Lanka",
     "ko": "스리랑카",
-    "greetings": "ආයුබෝවන්"
+    "greetings": "ආයුබෝවන්",
+    "lang": "si-LK"
   },
   {
     "id": 729,
@@ -1675,7 +1762,8 @@
     "alpha3": "swe",
     "en": "Sweden",
     "ko": "스웨덴",
-    "greetings": "Hej"
+    "greetings": "Hej",
+    "lang": "sv-SE"
   },
   {
     "id": 756,
@@ -1691,7 +1779,8 @@
     "alpha3": "syr",
     "en": "Syrian Arab Republic",
     "ko": "시리아",
-    "greetings": "مرحبا"
+    "greetings": "مرحبا",
+    "lang": "ar-SY"
   },
   {
     "id": 158,
@@ -1699,7 +1788,8 @@
     "alpha3": "twn",
     "en": "Taiwan, Province of China",
     "ko": "대만",
-    "greetings": "你好"
+    "greetings": "你好",
+    "lang": "zh-TW"
   },
   {
     "id": 762,
@@ -1715,7 +1805,8 @@
     "alpha3": "tza",
     "en": "Tanzania, United Republic of",
     "ko": "탄자니아",
-    "greetings": "Hello"
+    "greetings": "Hello",
+    "lang": "sw-TZ"
   },
   {
     "id": 764,
@@ -1723,7 +1814,8 @@
     "alpha3": "tha",
     "en": "Thailand",
     "ko": "태국",
-    "greetings": "สวัสดี"
+    "greetings": "สวัสดี",
+    "lang": "th-TH"
   },
   {
     "id": 626,
@@ -1770,7 +1862,8 @@
     "alpha3": "tun",
     "en": "Tunisia",
     "ko": "튀니지",
-    "greetings": "مرحبا"
+    "greetings": "مرحبا",
+    "lang": "ar-TN"
   },
   {
     "id": 792,
@@ -1778,7 +1871,8 @@
     "alpha3": "tur",
     "en": "Türkiye",
     "ko": "튀르키예",
-    "greetings": "Merhaba"
+    "greetings": "Merhaba",
+    "lang": "tr-TR"
   },
   {
     "id": 795,
@@ -1817,7 +1911,8 @@
     "alpha3": "ukr",
     "en": "Ukraine",
     "ko": "우크라이나",
-    "greetings": "Привіт"
+    "greetings": "Привіт",
+    "lang": "uk-UA"
   },
   {
     "id": 784,
@@ -1825,7 +1920,8 @@
     "alpha3": "are",
     "en": "United Arab Emirates",
     "ko": "아랍에미리트",
-    "greetings": "مرحبا"
+    "greetings": "مرحبا",
+    "lang": "ar-AE"
   },
   {
     "id": 826,
@@ -1833,7 +1929,8 @@
     "alpha3": "gbr",
     "en": "United Kingdom of Great Britain and Northern Ireland",
     "ko": "영국",
-    "greetings": "Hello"
+    "greetings": "Hello",
+    "lang": "en-GB"
   },
   {
     "id": 840,
@@ -1841,7 +1938,8 @@
     "alpha3": "usa",
     "en": "United States of America",
     "ko": "미국",
-    "greetings": "Hello"
+    "greetings": "Hello",
+    "lang": "en-US"
   },
   {
     "id": 581,
@@ -1856,7 +1954,8 @@
     "alpha3": "ury",
     "en": "Uruguay",
     "ko": "우루과이",
-    "greetings": "Hola"
+    "greetings": "Hola",
+    "lang": "es-UY"
   },
   {
     "id": 860,
@@ -1864,7 +1963,8 @@
     "alpha3": "uzb",
     "en": "Uzbekistan",
     "ko": "우즈베키스탄",
-    "greetings": "Salom"
+    "greetings": "Salom",
+    "lang": "uz-UZ"
   },
   {
     "id": 548,
@@ -1880,7 +1980,8 @@
     "alpha3": "ven",
     "en": "Venezuela, Bolivarian Republic of",
     "ko": "베네수엘라",
-    "greetings": "Hola"
+    "greetings": "Hola",
+    "lang": "es-VE"
   },
   {
     "id": 704,
@@ -1888,7 +1989,8 @@
     "alpha3": "vnm",
     "en": "Viet Nam",
     "ko": "베트남",
-    "greetings": "Xin chào"
+    "greetings": "Xin chào",
+    "lang": "vi-VN"
   },
   {
     "id": 92,
@@ -1924,7 +2026,8 @@
     "alpha3": "yem",
     "en": "Yemen",
     "ko": "예멘",
-    "greetings": "مرحبا"
+    "greetings": "مرحبا",
+    "lang": "ar-YE"
   },
   {
     "id": 894,
