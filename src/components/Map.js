@@ -180,11 +180,13 @@ export default function Map({ $app, countries, initialState, onClick }) {
         $tooltip.style.left = e.originalEvent.pageX + "px";
       });
 
+      // 마우스가 나라 위에서 바다로 나갈 때
       map.on("mouseout", "country-hovers", () => {
         map.setFeatureState(
           { source: "countries", id: hoveredId },
           { hover: false }
         );
+        hoveredId = null;
 
         $tooltip.style.display = "none";
       });
