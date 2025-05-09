@@ -27,6 +27,14 @@ export default function App($app) {
     infoField.setState(newState);
   };
 
+  // 나라 선택 시 효과 띄우기
+  const startSelectEffect = (countryA2) => {
+    const { greetings, lang } = countries.filter(
+      (c) => c.alpha2 === countryA2
+    )[0];
+    if (greetings) showFireworks(greetings, lang);
+  };
+
   const map = new Map({
     $app,
     countries,
@@ -37,11 +45,7 @@ export default function App($app) {
       if (select) {
         newSelected.push(countryA2);
 
-        // 인사말 효과 띄우기
-        const { greetings, lang } = countries.filter(
-          (c) => c.alpha2 === countryA2
-        )[0];
-        if (greetings) showFireworks(greetings, lang);
+        startSelectEffect(countryA2);
       } else {
         newSelected = newSelected.filter((c) => c !== countryA2);
       }
@@ -61,10 +65,7 @@ export default function App($app) {
       if (!checkbox.classList.contains("checked")) {
         newSelected.push(countryA2);
 
-        // 인사말 효과 띄우기
-        const greetings = countries.filter((c) => c.alpha2 === countryA2)[0]
-          .greetings;
-        if (greetings) showFireworks(greetings);
+        startSelectEffect(countryA2);
       } else {
         newSelected = newSelected.filter((c) => c !== countryA2);
       }
